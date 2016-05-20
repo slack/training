@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql_server
+  name: mysql-server
 spec:
   ports:
     -
