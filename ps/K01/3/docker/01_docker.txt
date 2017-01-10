@@ -1,0 +1,13 @@
+$ docker build . -t jhansen/busybox:foo
+Sending build context to Docker daemon 2.048 kB
+Step 1/2 : FROM busybox:latest
+ ---> 8a4698b1752b
+Step 2/2 : LABEL docker.deis.io training
+ ---> Using cache
+ ---> 3c02b8114a18
+Successfully built 3c02b8114a18
+$ docker push jhansen/busybox:foo
+The push refers to a repository [docker.io/jhansen/busybox]
+c85de82f7789: Layer already exists
+foo: digest: sha256:c3a94cbcf9329ef9ee8b2edc46797c51ce6343f78f284807559c37807ace7f1e size: 527
+$
