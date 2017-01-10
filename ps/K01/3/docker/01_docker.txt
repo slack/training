@@ -11,3 +11,16 @@ The push refers to a repository [docker.io/jhansen/busybox]
 c85de82f7789: Layer already exists
 foo: digest: sha256:c3a94cbcf9329ef9ee8b2edc46797c51ce6343f78f284807559c37807ace7f1e size: 527
 $
+
+
+$ docker run -it --rm jhansen/busybox:foo  /bin/sh
+/ # env
+no_proxy=*.local, 169.254/16
+HOSTNAME=606261ca50bf
+SHLVL=1
+HOME=/root
+TERM=xterm
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PWD=/
+/ #
+$
