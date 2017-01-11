@@ -1,0 +1,17 @@
+# Version 1
+kubectl create -f nginx-v1.yaml --record
+kubectl rollout history deployments/my-nginx
+
+# Version 2
+kubectl apply -f nginx-v2.yaml
+kubectl get replicasets
+kubectl rollout status deployment my-nginx
+kubectl rollout history deployments/my-nginx
+
+# Version 3
+kubectl apply -f nginx-v3.yaml
+kubectl rollout history deployments/my-nginx
+
+# Version 4
+kubectl rollout undo deployment/my-nginx
+kubectl rollout history deployments/my-nginx
