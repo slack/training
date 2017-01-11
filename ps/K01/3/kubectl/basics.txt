@@ -1,0 +1,14 @@
+# deploy a pod
+kubectl create -f simple-pod.yaml
+
+# create secret
+kubectl create secret generic new-secret --from-literal=user=username --from-literal=password=sekret
+
+# run bash in container
+kubectl run -i -t busybox --image=busybox --restart=Never
+
+# label a node
+kubectl label node <name> foo=bar
+
+# describe a node
+kubectl describe node <name>

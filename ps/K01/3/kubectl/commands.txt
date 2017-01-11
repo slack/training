@@ -1,0 +1,46 @@
+kubectl version
+
+kubectl cluster-info
+
+kubectl options
+
+KUBECONFIG=... kubectl
+
+kubectl get namespaces
+kubectl describe namespace kube-system
+
+# Getting single resources
+kubectl get <Kind> <Name>
+kubectl get <Kind>/<Name>
+
+# Getting multiple Kinds
+kubectl get <Kind>,<Kind>,<Kind>
+
+# Describing a resource
+kubectl describe <Kind> <Name>
+kubectl describe <Kind>/<Name>
+
+# Output formats
+kubectl get <Kind>/<Name> -o yaml
+
+# Getting lists by Labels
+kubectl -n deis get po -l app=deis-logger-fluentd -o yaml
+
+# Debug information
+kubectl -n deis get po --v=10
+
+# Create/Delete
+kubectl create -f ./my-manifest.yaml
+kubectl delete -f ./my-manifest.yaml
+
+# Change resources
+kubectl edit <Kind>/<Name>
+kubectl apply -f ./my-new-manifest.yaml
+
+# Watch resources
+kubectl get pods -w
+kubectl get events --all-namespaces -w
+
+Lots more at:
+<http://kubernetes.io/docs/user-guide/kubectl-cheatsheet/>
+
