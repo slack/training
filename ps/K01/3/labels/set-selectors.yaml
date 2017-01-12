@@ -1,0 +1,7 @@
+# Job, Deployment, Replica Set, Daemon Set
+selector:
+  matchLabels:
+    component: redis
+  matchExpressions:
+    - {key: tier, operator: In, values: [cache]}
+    - {key: environment, operator: NotIn, values: [dev]}

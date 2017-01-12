@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: right
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: label-show
+        group: right
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.11.8
+        ports:
+        - containerPort: 80
