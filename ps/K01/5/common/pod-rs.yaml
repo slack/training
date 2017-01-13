@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: pod-manager
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: managed-pod
+  template:
+    metadata:
+      labels:
+        app: managed-pod
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.10.2
+        ports:
+        - containerPort: 80
