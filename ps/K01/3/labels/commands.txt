@@ -17,3 +17,9 @@ curl -4sv localhost:8001/api/v1/proxy/namespaces/default/services/right/ >/dev/n
 kubectl get deployments --show-labels
 
 kubectl get rs --show-labels
+
+kubectl apply -f left-on-larry.yaml
+
+kubectl scale deployment left --replicas=5
+
+kubectl get po -o wide
