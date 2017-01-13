@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: daemonset-example
+spec:
+  selector:
+    matchLabels:
+      app: daemonset-example
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: daemonset-example
+        version: v1
+    spec:
+      containers:
+      - name: yo
+        image: busybox:latest
+        imagePullPolicy: IfNotPresent
+        command: [ "/bin/sh", "-c", "while true; do echo `date`; sleep 1; done"]
